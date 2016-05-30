@@ -10,7 +10,11 @@ public class A25
 
 		System.out.println("Input a month");
 		int mo = sc.nextInt();
-
+/*
+ * 
+ *
+ *
+ */
 		int sum = 0;
 
 		for(int i = 1900; i < year;i++)
@@ -49,20 +53,18 @@ public class A25
 
 		int days = 0;
 
-		for(int i = 1;i <= mo;i++)
+		if(mo == 2)
 		{
-			if(i == 2)
-			{
-				if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
-					days = 29;
-				else
-					days = 28;
-			}
-			else if(i ==4 || i == 6|| i == 9 || i ==11)
-				days = 30;
+			if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+				days = 29;
 			else
-				days = 31;
+				days = 28;
 		}
+		else if(mo ==4 || mo == 6|| mo == 9 || mo == 11)
+			days = 30;
+		else
+			days = 31;
+		
 		for(int i = 1;i <= days;i++)
 		{
 			if(sum%7 == 6)
